@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% include 'include/navbar.html' %}
+
+<h1>Listar Livros</h1>
+<ul>
+{% for livro in livros %}
+    <li>{{ livro.titulo }} - {{ livro.autor }}</li>
+{% empty %}
+    <li>inicie uma nova pesquisa, nenhum livro encontrado nessa pesquisa.</li>
+    <img src="{{ imagem.url }}" alt="{{ produto.nome }}">
+{% endfor %}
+</ul>
+{% endblock %}
+

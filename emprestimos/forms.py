@@ -1,5 +1,6 @@
 from django import forms
 from .models import Livro, Emprestimo, Autor, Perfil
+from django.contrib.auth.forms import UserCreationForm
 
 class LivrosForm(forms.ModelForm):
     class Meta:
@@ -24,3 +25,7 @@ class PerfilForm(forms.ModelForm):
     class Meta:
         model = Perfil
         fields = ['nome', 'email', 'avatar']
+        
+class MyUserCreationForm(UserCreationForm):
+    pass
+
